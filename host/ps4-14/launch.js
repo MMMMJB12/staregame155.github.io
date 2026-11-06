@@ -1,4 +1,4 @@
-/* Omar Center integration, 2026-11-03. The upstream jb.js referrer guard is retained. */
+/* Star Game integration, 2026-11-03. The upstream jb.js referrer guard is retained. */
 (function () {
   'use strict';
   var state = document.getElementById('state'), cache = document.getElementById('cache'), button = document.getElementById('start');

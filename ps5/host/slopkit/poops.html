@@ -345,14 +345,14 @@
 <link rel="stylesheet" href="../omar-host.css"></head>
 <body class="quiet">
 <div id="slopkitHeader">
-  <h1>OMAR CENTER · PS5</h1>
+  <h1>STAR GAME · PS5</h1>
   <p>Current firmware: <b id="currentFirmware">detecting...</b></p>
 </div>
 <div id="main-content">
   <div id="console-view" class="app-view selected">
     <div id="failureMessage">UNLUCKY &mdash; YOU NEED TO REBOOT</div>
     <div id="cat">
-      <img id="catImage" src="../../assets/omar-interface.png" alt="">
+      <img id="catImage" src="../../assets/brand-banner.jpg" alt="">
     </div>
     <h1>poops</h1>
     <div id="reboot"></div>
@@ -377,7 +377,7 @@
   </div>
   <div id="payloads-view" class="app-view">
     <div class="payloadHeader">
-      <h2>OMAR CENTER · PS5 Payloads</h2>
+      <h2>STAR GAME · PS5 Payloads</h2>
       <div class="payloadEyebrow" id="payloadNetworkStatus">Listening on console port 9021</div>
       <p id="payloadProgress">Select a payload to send it to the ELF loader.</p>
       <a class="homeLink" href="../../index.html">Home</a>
@@ -397,7 +397,7 @@
   </div>
 </div>
 <div id="payloadToastContainer"></div>
-<div id="slopkitFooter">OMAR CENTER · SlopKit · <a href="../../credits.html">المصادر والمطوّرون</a></div>
+<div id="slopkitFooter">STAR GAME · SlopKit · <a href="../../credits.html">المصادر والمطوّرون</a></div>
 
 <div id="console" hidden></div>
 
@@ -816,7 +816,7 @@ function captureRemoteEvent(tag, extra) {
 }
 
 function sendRemoteEvents(unloading) {
-    return Promise.resolve(); // Omar Center: static host has no log collection endpoint.
+    return Promise.resolve(); // Star Game: static host has no log collection endpoint.
 
     if (remoteFlushTimer !== null) {
         clearTimeout(remoteFlushTimer);
@@ -1445,7 +1445,7 @@ function setCatResult(success) {
         cat.className = success ? "ok" : "bad";
         if (success) {
             const image = document.getElementById("catImage");
-            if (image) image.src = "../../assets/omar-interface.png";
+            if (image) image.src = "../../assets/brand-banner.jpg";
         }
     }
 }

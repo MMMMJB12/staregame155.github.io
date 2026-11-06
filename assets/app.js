@@ -20,7 +20,7 @@
   function routeFor(fw) {
     var listed = ["9.00", "9.03", "9.04", "9.50", "9.51", "9.60", "10.00", "10.01", "10.50", "10.70", "10.71", "11.00", "11.02", "11.50", "11.52", "12.00", "12.02", "12.50", "12.52", "13.00", "13.02", "13.04", "13.50", "13.52"];
     if (!inRange(fw) || !inList(listed,fw)) return null;
-    return {name:'GoldHEN · '+fw,status:'ملفات داخل موقع عمر سنتر',url:'host/index.html',detail:'يفتح ملفات التشغيل داخل موقع عمر سنتر. اتبع تعليمات حفظ الملفات وراجع نتيجة الأداة.'};
+    return {name:'GoldHEN · '+fw,status:'ملفات داخل موقع مركز النجوم',url:'host/index.html',detail:'يفتح ملفات التشغيل داخل موقع مركز النجوم. اتبع تعليمات حفظ الملفات وراجع نتيجة الأداة.'};
   }
   function render() {
     var fw = firmware || (!isPS4 ? preview : null);
@@ -38,7 +38,7 @@
     text('route-detail', selected ? selected.detail : (outsideRange ? 'هذه الواجهة مخصصة للإصدارات المدرجة من 9.00 إلى 13.52 فقط. لن يبدأ التشغيل على هذا الإصدار.' : 'لا يوجد رابط تشغيل مُعد لهذا الإصدار، حتى لو كان ضمن النطاق. راجع رقم النظام؛ لا تختَر إصدارًا مختلفًا عنه.'));
     el('launch').disabled = !isPS4 || !selected || !firmware || launching;
     text('launch-label', !isPS4 ? 'افتح من متصفح PS4 للتشغيل' : (!selected ? 'الإصدار غير مدرج' : (launching ? 'جارٍ فتح ملفات التشغيل…' : 'تشغيل GoldHEN')));
-    text('launch-caption', selected ? 'التشغيل داخل موقع عمر سنتر، ويبقى الرابط على نفس النطاق.' : 'لن تبدأ طريقة غير مطابقة للإصدار.');
+    text('launch-caption', selected ? 'التشغيل داخل موقع مركز النجوم، ويبقى الرابط على نفس النطاق.' : 'لن تبدأ طريقة غير مطابقة للإصدار.');
   }
   el('preview-firmware').addEventListener('change', function () { preview = this.value; render(); });
   el('launch').addEventListener('click', function () {
@@ -48,7 +48,7 @@
 
     launching = true;
     render();
-    text('action-message','جارٍ فتح ملفات التشغيل داخل موقع عمر سنتر…');
+    text('action-message','جارٍ فتح ملفات التشغيل داخل موقع مركز النجوم…');
     window.location.assign(target.url);
   });
   window.addEventListener('pageshow',function () { launching = false; text('action-message',''); render(); });
@@ -77,7 +77,7 @@
     try {
       var registration = context.registerTool({
         name:'get_ps4_launch_route',title:'قراءة مسار تشغيل PS4',
-        description:'Read the firmware route shown by the Omar Center portal. Does not start a jailbreak or navigate.',
+        description:'Read the firmware route shown by the Star Game portal. Does not start a jailbreak or navigate.',
         inputSchema:{type:'object',properties:{},additionalProperties:false},
         annotations:{readOnlyHint:true,untrustedContentHint:false},
         execute:function (input) {

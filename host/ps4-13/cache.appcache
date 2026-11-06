@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# Omar Center migrate to unified PS4 offline cache 2026-11-04-v1
-# Omar Center 2026-11-03 embedded-v1
+# Star Game migrate to unified PS4 offline cache 2026-11-04-v1
+# Star Game 2026-11-03 embedded-v1
 # rev 20260925-skipjb2
 
 index.html
@@ -19,7 +19,7 @@ patches/1352.bin
 core.js?v=10
 jb.js?v=19
 
-../../assets/omar-interface.png
+../../assets/brand-banner.jpg
 
 NETWORK:
 *
@@ -27,6 +27,6 @@ NETWORK:
 FALLBACK:
 index.html index.html
 jb.html jb.html
-# Omar Center 2026-09-28
+# Star Game 2026-09-28
 
-# OMAR CENTER runtime branding 2026-09-28-r2
+# STAR GAME runtime branding 2026-09-28-r2

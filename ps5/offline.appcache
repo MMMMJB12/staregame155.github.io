@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# Omar Center PS5 offline f78fd5df088fbe05
+# Star Game PS5 offline f78fd5df088fbe05
 
 CACHE:
 ./
 assets/app.js
 assets/offline.js
-assets/omar-interface.png
+assets/brand-banner.jpg
 assets/style.css
 credits.html
 host/entry.js

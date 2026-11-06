@@ -1,4 +1,4 @@
-name: Install Omar Center site files
+name: Install Star Game site files
 on:
   workflow_dispatch:
   push:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: install-omar-site
+  group: install-star-game-site
   cancel-in-progress: false
 jobs:
   install:
@@ -22,8 +22,8 @@ jobs:
           from pathlib import Path, PurePosixPath
           import hashlib, json, zipfile
           archive = Path('site-package.zip')
-          expected = '0489faf3ea438c99dc4cd23e14ffeff1436f1e438df6eb75a499afde70610ebe'
-          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected, 'Unexpected package checksum'
+          expected = 'a7a3d0bfdd8a1e5fb6feb5072f7ec239484ed1a03fe0ce001dbaf93cfc7fa26c'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected, 'Unexpected Star Game package checksum'
           allowed = {'.nojekyll', 'LICENSE-PSFree.txt', 'README.md', 'SHA256SUMS.json', 'index.html', 'credits.html', 'assets', 'host'}
           with zipfile.ZipFile(archive) as z:
               assert z.testzip() is None, 'Damaged archive'
@@ -34,7 +34,7 @@ jobs:
               z.extractall('.')
           for name, digest in json.loads(Path('SHA256SUMS.json').read_text()).items():
               assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == digest, name
-          print('All 71 site files extracted and verified.')
+          print('All 75 site files extracted and verified.')
           PY
       - name: Commit the unpacked website to main
         run: |
@@ -42,6 +42,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- .nojekyll LICENSE-PSFree.txt README.md SHA256SUMS.json index.html credits.html assets host
           if ! git diff --cached --quiet; then
-            git commit -m 'Install complete Omar Center PS4 host with local payloads'
+            git commit -m 'Install complete Star Game PS4 host with local payloads'
             git push origin HEAD:main
           fi

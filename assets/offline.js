@@ -1,4 +1,4 @@
-/* Omar Center PS4 portal AppCache, 2026-11-04. */
+/* Star Game PS4 portal AppCache, 2026-11-04. */
 (function () {
   'use strict';
   var ac = window.applicationCache;

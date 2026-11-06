@@ -49,7 +49,7 @@ function hostFail() {
 }
 
 function post(tag, detail) {
-    return; // Star Game: no telemetry endpoint on this static host.
+    return; // Omar Center: no telemetry endpoint on this static host.
 
     try {
         const x = new XMLHttpRequest();
